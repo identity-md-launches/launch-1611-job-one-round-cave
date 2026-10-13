@@ -1,0 +1,45 @@
+{
+  "round": 23,
+  "tests": {
+    "zto_sizes": 12,
+    "zto_path": 17,
+    "zto_band": 16,
+    "total_passed": 45
+  },
+  "demonstration": "Two complete candidates; one incomplete candidate; exit 0. Historical real snapshot; no new live reads.",
+  "goal_unchanged": true,
+  "older_dist_files_unchanged": true,
+  "new_record_shape_valid": true,
+  "outputs_untracked": true,
+  "files": [
+    {
+      "path": "artifacts/line-1/wall-v3.png",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3973164,
+      "sha256": "10b86b824f774fbe0d0ec55363094aa33721916074c8486e95fe2e21068bdc3d"
+    },
+    {
+      "path": "artifacts/line-1/wall.png",
+      "format": "PNG",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 3973164,
+      "sha256": "10b86b824f774fbe0d0ec55363094aa33721916074c8486e95fe2e21068bdc3d"
+    },
+    {
+      "path": "dist/line-1/23.jpg",
+      "format": "JPEG",
+      "width": 512,
+      "height": 512,
+      "bytes": 54854
+    }
+  ],
+  "unmet_visual_requirements": [],
+  "visual_limitations": [
+    "Worn overlapping ancestor hand strokes retained exactly.",
+    "Generated texture within new motif rectangle; original pixels preserved outside it."
+  ],
+  "preserved_pixel_region": "All pixels outside x=[500,960), y=[810,1015) match recovered record 22 wall."
+}

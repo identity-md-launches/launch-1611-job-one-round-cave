@@ -1,0 +1,104 @@
+{
+  "schema": "zto-sizes-report-v1",
+  "chain_id": 1,
+  "pool_id": "0x888b07bd282f587d3c6b0fcb23e7fc55bbb33abe8910dd7492db815dc8dc5592",
+  "block": {
+    "number": "0x18f8a44",
+    "hash": "0xcd8e7e4ba940af1feac8d6b441c37ef0230c4bcd2fd55d36376038a4b4c36650",
+    "timestamp": "0x6ace4457"
+  },
+  "source": "https://ethereum-rpc.publicnode.com",
+  "input_token": "ZTO",
+  "output_token": "IMD",
+  "slippage_bps": 100,
+  "max_spot_loss_bps": null,
+  "candidate_count": 2,
+  "largest_candidate_input_raw": "100000000000000000000000000",
+  "minimum_rounding": "floor(estimated_output_raw * (10000 - slippage_bps) / 10000)",
+  "scope": "Independent candidate sizes at one observed block; no trade recommendation.",
+  "limitations": [
+    "Historical snapshot is not a current quote or freshness guarantee.",
+    "Minimum is a planning number, not an enforced or guaranteed receipt.",
+    "Spot loss includes fees and rounding; it is separate from slippage tolerance.",
+    "No router calldata, settlement, transfer behavior, gas or MEV simulation.",
+    "Largest candidate means largest supplied amount passing the chosen filters, not pool capacity."
+  ],
+  "candidates": [
+    {
+      "amount": "1",
+      "requested_input_raw": "1000000000000000000",
+      "pool_status": "estimated",
+      "initialized_ticks_crossed": 0,
+      "estimate": {
+        "input_consumed_raw": "1000000000000000000",
+        "input_unspent_raw": "0",
+        "output_raw": "15292155595473",
+        "output": "0.000015292155595473",
+        "fee_raw": "12500000000000000",
+        "fee": "0.0125",
+        "sqrt_price_after_x96": "20133245180955745131062960496531",
+        "tick_after": 110761,
+        "liquidity_after_raw": "1395488085257384418720526"
+      },
+      "gross_spot_output_raw": {
+        "numerator": "6277101735386680763835789423207666416102355444464034512896000000000000000000",
+        "denominator": "405347559258943563746907121288118744811476328800693776702884841"
+      },
+      "spot_loss_bps": {
+        "numerator": "78463788953703496164804218803930677239880316488617232084570769680700075207",
+        "denominator": "627710173538668076383578942320766641610235544446403451289600000000000000",
+        "ceiling": 126
+      },
+      "status": "candidate",
+      "minimum_output_raw": "15139234039518",
+      "minimum_output": "0.000015139234039518"
+    },
+    {
+      "amount": "100000000",
+      "requested_input_raw": "100000000000000000000000000",
+      "pool_status": "estimated",
+      "initialized_ticks_crossed": 0,
+      "estimate": {
+        "input_consumed_raw": "100000000000000000000000000",
+        "input_unspent_raw": "0",
+        "output_raw": "1196130391948897309582",
+        "output": "1196.130391948897309582",
+        "fee_raw": "1250000000000000000000000",
+        "fee": "1250000",
+        "sqrt_price_after_x96": "25739728713635116843076933370750",
+        "tick_after": 115674,
+        "liquidity_after_raw": "1395488085257384418720526"
+      },
+      "gross_spot_output_raw": {
+        "numerator": "627710173538668076383578942320766641610235544446403451289600000000000000000000000000",
+        "denominator": "405347559258943563746907121288118744811476328800693776702884841"
+      },
+      "spot_loss_bps": {
+        "numerator": "71430819303369516402807820491354732580261353388516166447127459449139536398564076769",
+        "denominator": "31385508676933403819178947116038332080511777222320172564480000000000000000000000",
+        "ceiling": 2276
+      },
+      "status": "candidate",
+      "minimum_output_raw": "1184169088029408336486",
+      "minimum_output": "1184.169088029408336486"
+    },
+    {
+      "amount": "1000000000",
+      "requested_input_raw": "1000000000000000000000000000",
+      "pool_status": "outside_coverage",
+      "initialized_ticks_crossed": 1,
+      "status": "incomplete",
+      "partial": {
+        "input_consumed_raw": "532032773748606186868770127",
+        "input_unspent_raw": "467967226251393813131229873",
+        "output_raw": "3278572212001747676444",
+        "output": "3278.572212001747676444",
+        "fee_raw": "6650409671857577335859627",
+        "fee": "6650409.671857577335859627",
+        "sqrt_price_after_x96": "79299443975792720780679863727831",
+        "tick_after": 138180,
+        "liquidity_after_raw": "0"
+      }
+    }
+  ]
+}
