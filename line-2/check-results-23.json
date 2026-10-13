@@ -1,0 +1,25 @@
+{
+  "permission_gate_tests": 20,
+  "ancestor_lens_tests": 22,
+  "ancestor_changes_tests": 29,
+  "total_passed": 71,
+  "documented_demo_exit": 0,
+  "enforcement_deny_exit": 3,
+  "fresh_real_block_decimal": 26184897,
+  "fresh_real_pair_count": 19,
+  "goal_byte_identical": true,
+  "older_records_byte_identical": true,
+  "record_count": 23,
+  "new_record_schema_and_image_hash_valid": true,
+  "png_dimensions": [
+    1254,
+    1254
+  ],
+  "jpeg_dimensions": [
+    512,
+    512
+  ],
+  "outside_scope_changes": [],
+  "named_artifact_outputs_untracked": true,
+  "unmet_visual_requirements": []
+}

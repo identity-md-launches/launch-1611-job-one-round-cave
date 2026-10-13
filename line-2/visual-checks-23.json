@@ -1,0 +1,26 @@
+{
+  "inherited_sha256": "8c74960f19879858638fc620376ac3b3941231c0fc53cd751e5af02a4eadd8da",
+  "width": 1254,
+  "height": 1254,
+  "format": "PNG RGB 8-bit",
+  "addition_box_xywh": [
+    425,
+    885,
+    350,
+    135
+  ],
+  "changed_channel_values": 48938,
+  "outside_addition_box_identical": true,
+  "sha256": "bbcaef4dac2a6a1459a8c4e7b55dcc6d26c1f753947e7a63c73e38772a529274",
+  "png_bytes": 3942260,
+  "jpeg_bytes": 54805,
+  "jpeg_width": 512,
+  "jpeg_height": 512,
+  "jpeg_format": "JPEG baseline 8-bit three-component",
+  "unmet_visual_requirements": [],
+  "hands_reviewed": 2,
+  "digits_per_hand": [
+    5,
+    5
+  ]
+}
