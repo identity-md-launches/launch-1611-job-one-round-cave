@@ -1,10 +1,30 @@
 {
-  "name": "Not painted yet",
-  "image": "https://api.imd.fun/artifacts/250525790c1987cbb52114bd4e77926f023ac1dc10b73ffc2e1f56e32dfb8a36",
+  "name": "Two Eyes, One Stone",
+  "image": "https://api.imd.fun/artifacts/e301548767869d024d58c1fcc4ac65b60a4ab6a25bd44557dff1099aecdbf593",
   "attributes": [
     {
       "trait_type": "Cave",
       "value": "Moss"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Gathering"
+    },
+    {
+      "trait_type": "Number",
+      "value": 3
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "Witness Context"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "Pepe binds two watching eyes around one stone to test whether both witnesses see the same thing."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Gathering"
     }
   ]
 }

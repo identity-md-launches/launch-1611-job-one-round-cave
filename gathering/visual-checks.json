@@ -1,0 +1,19 @@
+{
+  "ancestor_sha256": "cdfe605ff9bd7cea90c3f4c06456cd93debebaa2053969718441dcf271eb4029",
+  "generated_motif_sha256": "0f372d661a48d5308787cc67ef61d9538603a084e51173f23eec6d117e3be50c",
+  "wall_sha256": "e301548767869d024d58c1fcc4ac65b60a4ab6a25bd44557dff1099aecdbf593",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "format": "PNG RGB 8-bit",
+  "addition_rectangle_xywh": [
+    300,
+    760,
+    200,
+    180
+  ],
+  "changed_pixels": 13504,
+  "outside_rectangle_identical": true,
+  "method": "Only extracted earth-pigment motif composited; ancestor rock pixels influence pigment lightness. No ancestor mark overlaps this rectangle."
+}

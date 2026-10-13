@@ -1,10 +1,10 @@
 {
-  "schema": "gathering-local-checks-v1",
-  "authority": "local contributor checks, not independent certification",
+  "schema": "gathering-local-checks-v2",
+  "authority": "Local contributor checks; no independent certification.",
   "all_passed": true,
   "checks": [
     {
-      "name": "line-1-suite",
+      "name": "line-1-zto-band-suite",
       "command": [
         "python3",
         "-B",
@@ -20,10 +20,67 @@
       "expected_exit": 0,
       "exit": 0,
       "passed": true,
-      "test_output": "test_amount_precision (test_zto_band.BandTests.test_amount_precision) ... ok\ntest_exact_boundary_safely_refused_in_one_direction (test_zto_band.BandTests.test_exact_boundary_safely_refused_in_one_direction) ... ok\ntest_fees_are_directional (test_zto_band.BandTests.test_fees_are_directional) ... ok\ntest_interval_cap_and_refusal (test_zto_band.BandTests.test_interval_cap_and_refusal) ... ok\ntest_keccak_known_vectors (test_zto_band.BandTests.test_keccak_known_vectors) ... ok\ntest_live_capture_uses_one_block_hash (test_zto_band.BandTests.test_live_capture_uses_one_block_hash) ... ok\ntest_monotonic_and_conservation (test_zto_band.BandTests.test_monotonic_and_conservation) ... ok\ntest_negative_tick_floor (test_zto_band.BandTests.test_negative_tick_floor) ... ok\ntest_offline_cli_does_not_construct_rpc (test_zto_band.BandTests.test_offline_cli_does_not_construct_rpc) ... ok\ntest_pool_identity_and_real_decimals (test_zto_band.BandTests.test_pool_identity_and_real_decimals) ... ok\ntest_rational_delta_rounding (test_zto_band.BandTests.test_rational_delta_rounding) ... ok\ntest_real_quoter_regressions (test_zto_band.BandTests.test_real_quoter_regressions) ... ok\ntest_reject_corrupted_observation (test_zto_band.BandTests.test_reject_corrupted_observation) ... ok\ntest_rpc_allowlist_and_credential_rejection (test_zto_band.BandTests.test_rpc_allowlist_and_credential_rejection) ... ok\ntest_tick_extremes (test_zto_band.BandTests.test_tick_extremes) ... ok\ntest_zero_liquidity (test_zto_band.BandTests.test_zero_liquidity) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.116s\n\nOK\n"
+      "stderr": "test_amount_precision (test_zto_band.BandTests.test_amount_precision) ... ok\ntest_exact_boundary_safely_refused_in_one_direction (test_zto_band.BandTests.test_exact_boundary_safely_refused_in_one_direction) ... ok\ntest_fees_are_directional (test_zto_band.BandTests.test_fees_are_directional) ... ok\ntest_interval_cap_and_refusal (test_zto_band.BandTests.test_interval_cap_and_refusal) ... ok\ntest_keccak_known_vectors (test_zto_band.BandTests.test_keccak_known_vectors) ... ok\ntest_live_capture_uses_one_block_hash (test_zto_band.BandTests.test_live_capture_uses_one_block_hash) ... ok\ntest_monotonic_and_conservation (test_zto_band.BandTests.test_monotonic_and_conservation) ... ok\ntest_negative_tick_floor (test_zto_band.BandTests.test_negative_tick_floor) ... ok\ntest_offline_cli_does_not_construct_rpc (test_zto_band.BandTests.test_offline_cli_does_not_construct_rpc) ... ok\ntest_pool_identity_and_real_decimals (test_zto_band.BandTests.test_pool_identity_and_real_decimals) ... ok\ntest_rational_delta_rounding (test_zto_band.BandTests.test_rational_delta_rounding) ... ok\ntest_real_quoter_regressions (test_zto_band.BandTests.test_real_quoter_regressions) ... ok\ntest_reject_corrupted_observation (test_zto_band.BandTests.test_reject_corrupted_observation) ... ok\ntest_rpc_allowlist_and_credential_rejection (test_zto_band.BandTests.test_rpc_allowlist_and_credential_rejection) ... ok\ntest_tick_extremes (test_zto_band.BandTests.test_tick_extremes) ... ok\ntest_zero_liquidity (test_zto_band.BandTests.test_zero_liquidity) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.037s\n\nOK\n"
     },
     {
-      "name": "line-2-suite",
+      "name": "line-1-zto-path-suite",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "line-1/tools/zto-path",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "test_corrupted_bitmap_tick_and_liquidity_rejected (test_zto_path.PathTests.test_corrupted_bitmap_tick_and_liquidity_rejected) ... ok\ntest_current_relay_and_read_only_allowlist (test_zto_path.PathTests.test_current_relay_and_read_only_allowlist) ... ok\ntest_exactly_consumed_at_boundary_crosses_once (test_zto_path.PathTests.test_exactly_consumed_at_boundary_crosses_once) ... ok\ntest_live_capture_hash_pinning_and_reorg (test_zto_path.PathTests.test_live_capture_hash_pinning_and_reorg) ... ok\ntest_monotonicity_and_conservation (test_zto_path.PathTests.test_monotonicity_and_conservation) ... ok\ntest_negative_bitmap_and_inclusive_downward_search (test_zto_path.PathTests.test_negative_bitmap_and_inclusive_downward_search) ... ok\ntest_offline_cli_and_invalid_input (test_zto_path.PathTests.test_offline_cli_and_invalid_input) ... ok\ntest_real_exhaustion_is_not_full_fill (test_zto_path.PathTests.test_real_exhaustion_is_not_full_fill) ... ok\ntest_real_improvement_over_one_interval (test_zto_path.PathTests.test_real_improvement_over_one_interval) ... ok\ntest_real_quoter_outputs_and_calldata (test_zto_path.PathTests.test_real_quoter_outputs_and_calldata) ... ok\ntest_step_limit_has_no_estimate (test_zto_path.PathTests.test_step_limit_has_no_estimate) ... ok\ntest_synthetic_boundary_no_double_crossing (test_zto_path.PathTests.test_synthetic_boundary_no_double_crossing) ... ok\ntest_synthetic_downward_crossing_subtracts_signed_net (test_zto_path.PathTests.test_synthetic_downward_crossing_subtracts_signed_net) ... ok\ntest_synthetic_empty_range_refuses_at_coverage (test_zto_path.PathTests.test_synthetic_empty_range_refuses_at_coverage) ... ok\ntest_synthetic_known_zero_liquidity_gap (test_zto_path.PathTests.test_synthetic_known_zero_liquidity_gap) ... ok\ntest_synthetic_liquidity_underflow_rejected (test_zto_path.PathTests.test_synthetic_liquidity_underflow_rejected) ... ok\ntest_synthetic_upward_crossing_adds_liquidity (test_zto_path.PathTests.test_synthetic_upward_crossing_adds_liquidity) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.080s\n\nOK\n"
+    },
+    {
+      "name": "line-1-zto-sizes-suite",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "line-1/tools/zto-sizes",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "test_cli_offline_and_exit_codes (test_zto_sizes.SizesTests.test_cli_offline_and_exit_codes) ... ok\ntest_integer_minimum_for_large_real_output (test_zto_sizes.SizesTests.test_integer_minimum_for_large_real_output) ... ok\ntest_invalid_settings_and_inputs (test_zto_sizes.SizesTests.test_invalid_settings_and_inputs) ... ok\ntest_loss_threshold_exact_rational (test_zto_sizes.SizesTests.test_loss_threshold_exact_rational) ... ok\ntest_no_usable_candidate_has_no_largest (test_zto_sizes.SizesTests.test_no_usable_candidate_has_no_largest) ... ok\ntest_partial_fill_never_has_minimum (test_zto_sizes.SizesTests.test_partial_fill_never_has_minimum) ... ok\ntest_replays_all_real_quoter_outputs (test_zto_sizes.SizesTests.test_replays_all_real_quoter_outputs) ... ok\ntest_reverse_spot_ratio_and_decimals (test_zto_sizes.SizesTests.test_reverse_spot_ratio_and_decimals) ... ok\ntest_unsorted_candidates_are_independent (test_zto_sizes.SizesTests.test_unsorted_candidates_are_independent) ... ok\ntest_wrong_pool_snapshot_refused (test_zto_sizes.SizesTests.test_wrong_pool_snapshot_refused) ... ok\ntest_zero_outputs_never_become_candidates (test_zto_sizes.SizesTests.test_zero_outputs_never_become_candidates) ... ok\ntest_zero_tolerance_and_extreme_tolerance (test_zto_sizes.SizesTests.test_zero_tolerance_and_extreme_tolerance) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.060s\n\nOK\n"
+    },
+    {
+      "name": "line-2-allowance-changes-suite",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "line-2/tools/allowance-changes",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "test_all_allowance_transitions_and_exact_integer_deltas (test_allowance_changes.ChangesTests.test_all_allowance_transitions_and_exact_integer_deltas) ... ok\ntest_backwards_timestamp_is_rejected (test_allowance_changes.ChangesTests.test_backwards_timestamp_is_rejected) ... ok\ntest_bad_raw_calldata_and_missing_response_fail (test_allowance_changes.ChangesTests.test_bad_raw_calldata_and_missing_response_fail) ... ok\ntest_bounded_worker_success_and_error (test_allowance_changes.ChangesTests.test_bounded_worker_success_and_error) ... ok\ntest_changed_decimals_are_not_compared (test_allowance_changes.ChangesTests.test_changed_decimals_are_not_compared) ... ok\ntest_changed_token_is_not_compared (test_allowance_changes.ChangesTests.test_changed_token_is_not_compared) ... ok\ntest_cli_requires_both_offline_inputs_and_explicit_refresh_inventory (test_allowance_changes.ChangesTests.test_cli_requires_both_offline_inputs_and_explicit_refresh_inventory) ... ok\ntest_conflicting_balance_between_disjoint_pairs_of_same_owner_fails (test_allowance_changes.ChangesTests.test_conflicting_balance_between_disjoint_pairs_of_same_owner_fails) ... ok\ntest_empty_balance_preserves_active_permission (test_allowance_changes.ChangesTests.test_empty_balance_preserves_active_permission) ... ok\ntest_invalid_deadlines_fail_before_start (test_allowance_changes.ChangesTests.test_invalid_deadlines_fail_before_start) ... ok\ntest_inventory_can_be_refreshed_again (test_allowance_changes.ChangesTests.test_inventory_can_be_refreshed_again) ... ok\ntest_missing_pair_is_unknown_not_zero (test_allowance_changes.ChangesTests.test_missing_pair_is_unknown_not_zero) ... ok\ntest_mixed_blocks_duplicate_pairs_and_empty_bundles_fail (test_allowance_changes.ChangesTests.test_mixed_blocks_duplicate_pairs_and_empty_bundles_fail) ... ok\ntest_newly_observed_is_not_newly_approved (test_allowance_changes.ChangesTests.test_newly_observed_is_not_newly_approved) ... ok\ntest_offline_command_cannot_construct_rpc (test_allowance_changes.ChangesTests.test_offline_command_cannot_construct_rpc) ... ok\ntest_order_independence (test_allowance_changes.ChangesTests.test_order_independence) ... ok\ntest_owner_cap_does_not_double_count_overlapping_spenders (test_allowance_changes.ChangesTests.test_owner_cap_does_not_double_count_overlapping_spenders) ... ok\ntest_real_capture_preserves_all_nineteen_pairs (test_allowance_changes.ChangesTests.test_real_capture_preserves_all_nineteen_pairs) ... ok\ntest_real_empty_recent_window_does_not_erase_nineteen_permissions (test_allowance_changes.ChangesTests.test_real_empty_recent_window_does_not_erase_nineteen_permissions) ... ok\ntest_refresh_replays_real_capture_with_hash_pins_and_no_event_scan (test_allowance_changes.ChangesTests.test_refresh_replays_real_capture_with_hash_pins_and_no_event_scan) ... ok\ntest_reorg_of_either_header_is_rejected (test_allowance_changes.ChangesTests.test_reorg_of_either_header_is_rejected) ... ok\ntest_requested_numeric_block_must_match (test_allowance_changes.ChangesTests.test_requested_numeric_block_must_match) ... ok\ntest_retired_relay_is_rejected_and_current_route_is_allowed (test_allowance_changes.ChangesTests.test_retired_relay_is_rejected_and_current_route_is_allowed) ... ok\ntest_same_block_conflicts_fail_but_identical_replay_works (test_allowance_changes.ChangesTests.test_same_block_conflicts_fail_but_identical_replay_works) ... ok\ntest_same_height_different_hash_and_backwards_time_fail (test_allowance_changes.ChangesTests.test_same_height_different_hash_and_backwards_time_fail) ... ok\ntest_total_deadline_terminates_blocked_worker (test_allowance_changes.ChangesTests.test_total_deadline_terminates_blocked_worker) ... ok\ntest_totals_exclude_unmeasured_pairs (test_allowance_changes.ChangesTests.test_totals_exclude_unmeasured_pairs) ... ok\ntest_workspace_and_overwrite_guards (test_allowance_changes.ChangesTests.test_workspace_and_overwrite_guards) ... ok\ntest_wrong_chain_fails_before_any_state_reads (test_allowance_changes.ChangesTests.test_wrong_chain_fails_before_any_state_reads) ... ok\n\n----------------------------------------------------------------------\nRan 29 tests in 0.530s\n\nOK\n"
+    },
+    {
+      "name": "line-2-allowance-lens-suite",
       "command": [
         "python3",
         "-B",
@@ -39,10 +96,48 @@
       "expected_exit": 0,
       "exit": 0,
       "passed": true,
-      "test_output": "test_capture_replays_real_responses_with_hash_pinning (test_allowance_lens.AllowanceLensTests.test_capture_replays_real_responses_with_hash_pinning) ... ok\ntest_duplicate_removed_and_out_of_window_logs_fail (test_allowance_lens.AllowanceLensTests.test_duplicate_removed_and_out_of_window_logs_fail) ... ok\ntest_empty_window_does_not_claim_wallet_is_safe (test_allowance_lens.AllowanceLensTests.test_empty_window_does_not_claim_wallet_is_safe) ... ok\ntest_event_amount_is_not_used_as_current_allowance (test_allowance_lens.AllowanceLensTests.test_event_amount_is_not_used_as_current_allowance) ... ok\ntest_explicit_pairs_do_not_scan_logs (test_allowance_lens.AllowanceLensTests.test_explicit_pairs_do_not_scan_logs) ... ok\ntest_finite_allowance_caps_spendable_amount (test_allowance_lens.AllowanceLensTests.test_finite_allowance_caps_spendable_amount) ... ok\ntest_integer_formatting_never_uses_float (test_allowance_lens.AllowanceLensTests.test_integer_formatting_never_uses_float) ... ok\ntest_log_header_mismatch_fails (test_allowance_lens.AllowanceLensTests.test_log_header_mismatch_fails) ... ok\ntest_missing_or_duplicate_state_results_fail (test_allowance_lens.AllowanceLensTests.test_missing_or_duplicate_state_results_fail) ... ok\ntest_offline_cli_never_constructs_rpc (test_allowance_lens.AllowanceLensTests.test_offline_cli_never_constructs_rpc) ... ok\ntest_offline_cli_rejects_live_query_options (test_allowance_lens.AllowanceLensTests.test_offline_cli_rejects_live_query_options) ... ok\ntest_owner_filter_limits_discovery (test_allowance_lens.AllowanceLensTests.test_owner_filter_limits_discovery) ... ok\ntest_owner_total_does_not_double_count_balance (test_allowance_lens.AllowanceLensTests.test_owner_total_does_not_double_count_balance) ... ok\ntest_query_limits_are_enforced_before_network (test_allowance_lens.AllowanceLensTests.test_query_limits_are_enforced_before_network) ... ok\ntest_real_observation_matches_recorded_report (test_allowance_lens.AllowanceLensTests.test_real_observation_matches_recorded_report) ... ok\ntest_reorg_is_rejected (test_allowance_lens.AllowanceLensTests.test_reorg_is_rejected) ... ok\ntest_shuffled_events_are_order_independent (test_allowance_lens.AllowanceLensTests.test_shuffled_events_are_order_independent) ... ok\ntest_transport_rejects_send_methods_before_opening (test_allowance_lens.AllowanceLensTests.test_transport_rejects_send_methods_before_opening) ... ok\ntest_workspace_boundary_rejected_without_reading (test_allowance_lens.AllowanceLensTests.test_workspace_boundary_rejected_without_reading) ... ok\ntest_wrong_chain_stops_before_state_queries (test_allowance_lens.AllowanceLensTests.test_wrong_chain_stops_before_state_queries) ... ok\ntest_wrong_chain_token_and_decimals_fail (test_allowance_lens.AllowanceLensTests.test_wrong_chain_token_and_decimals_fail) ... ok\ntest_zero_balance_is_not_revocation (test_allowance_lens.AllowanceLensTests.test_zero_balance_is_not_revocation) ... ok\n\n----------------------------------------------------------------------\nRan 22 tests in 0.134s\n\nOK\n"
+      "stderr": "test_capture_replays_real_responses_with_hash_pinning (test_allowance_lens.AllowanceLensTests.test_capture_replays_real_responses_with_hash_pinning) ... ok\ntest_duplicate_removed_and_out_of_window_logs_fail (test_allowance_lens.AllowanceLensTests.test_duplicate_removed_and_out_of_window_logs_fail) ... ok\ntest_empty_window_does_not_claim_wallet_is_safe (test_allowance_lens.AllowanceLensTests.test_empty_window_does_not_claim_wallet_is_safe) ... ok\ntest_event_amount_is_not_used_as_current_allowance (test_allowance_lens.AllowanceLensTests.test_event_amount_is_not_used_as_current_allowance) ... ok\ntest_explicit_pairs_do_not_scan_logs (test_allowance_lens.AllowanceLensTests.test_explicit_pairs_do_not_scan_logs) ... ok\ntest_finite_allowance_caps_spendable_amount (test_allowance_lens.AllowanceLensTests.test_finite_allowance_caps_spendable_amount) ... ok\ntest_integer_formatting_never_uses_float (test_allowance_lens.AllowanceLensTests.test_integer_formatting_never_uses_float) ... ok\ntest_log_header_mismatch_fails (test_allowance_lens.AllowanceLensTests.test_log_header_mismatch_fails) ... ok\ntest_missing_or_duplicate_state_results_fail (test_allowance_lens.AllowanceLensTests.test_missing_or_duplicate_state_results_fail) ... ok\ntest_offline_cli_never_constructs_rpc (test_allowance_lens.AllowanceLensTests.test_offline_cli_never_constructs_rpc) ... ok\ntest_offline_cli_rejects_live_query_options (test_allowance_lens.AllowanceLensTests.test_offline_cli_rejects_live_query_options) ... ok\ntest_owner_filter_limits_discovery (test_allowance_lens.AllowanceLensTests.test_owner_filter_limits_discovery) ... ok\ntest_owner_total_does_not_double_count_balance (test_allowance_lens.AllowanceLensTests.test_owner_total_does_not_double_count_balance) ... ok\ntest_query_limits_are_enforced_before_network (test_allowance_lens.AllowanceLensTests.test_query_limits_are_enforced_before_network) ... ok\ntest_real_observation_matches_recorded_report (test_allowance_lens.AllowanceLensTests.test_real_observation_matches_recorded_report) ... ok\ntest_reorg_is_rejected (test_allowance_lens.AllowanceLensTests.test_reorg_is_rejected) ... ok\ntest_shuffled_events_are_order_independent (test_allowance_lens.AllowanceLensTests.test_shuffled_events_are_order_independent) ... ok\ntest_transport_rejects_send_methods_before_opening (test_allowance_lens.AllowanceLensTests.test_transport_rejects_send_methods_before_opening) ... ok\ntest_workspace_boundary_rejected_without_reading (test_allowance_lens.AllowanceLensTests.test_workspace_boundary_rejected_without_reading) ... ok\ntest_wrong_chain_stops_before_state_queries (test_allowance_lens.AllowanceLensTests.test_wrong_chain_stops_before_state_queries) ... ok\ntest_wrong_chain_token_and_decimals_fail (test_allowance_lens.AllowanceLensTests.test_wrong_chain_token_and_decimals_fail) ... ok\ntest_zero_balance_is_not_revocation (test_allowance_lens.AllowanceLensTests.test_zero_balance_is_not_revocation) ... ok\n\n----------------------------------------------------------------------\nRan 22 tests in 0.038s\n\nOK\n"
     },
     {
-      "name": "line-3-suite",
+      "name": "line-2-permission-gate-suite",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "line-2/tools/permission-gate",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "test_block_interval_is_inclusive (test_permission_gate.GateTests.test_block_interval_is_inclusive) ... ok\ntest_case_normalized_duplicate_pairs_rejected (test_permission_gate.GateTests.test_case_normalized_duplicate_pairs_rejected) ... ok\ntest_corrupt_evidence_is_rejected_not_a_policy_pass (test_permission_gate.GateTests.test_corrupt_evidence_is_rejected_not_a_policy_pass) ... ok\ntest_demo_is_offline_and_matches_delivered_report (test_permission_gate.GateTests.test_demo_is_offline_and_matches_delivered_report) ... ok\ntest_duplicate_json_keys_rejected (test_permission_gate.GateTests.test_duplicate_json_keys_rejected) ... ok\ntest_empty_real_event_scan_never_passes (test_permission_gate.GateTests.test_empty_real_event_scan_never_passes) ... ok\ntest_enforcement_exit_codes_and_json (test_permission_gate.GateTests.test_enforcement_exit_codes_and_json) ... ok\ntest_exact_real_limits_pass_only_measured_pairs (test_permission_gate.GateTests.test_exact_real_limits_pass_only_measured_pairs) ... ok\ntest_integer_precision_and_uint256_boundaries (test_permission_gate.GateTests.test_integer_precision_and_uint256_boundaries) ... ok\ntest_invalid_intervals_rejected (test_permission_gate.GateTests.test_invalid_intervals_rejected) ... ok\ntest_limit_one_unit_below_real_allowance_denies (test_permission_gate.GateTests.test_limit_one_unit_below_real_allowance_denies) ... ok\ntest_missing_required_evidence_overrides_even_known_violation (test_permission_gate.GateTests.test_missing_required_evidence_overrides_even_known_violation) ... ok\ntest_nonethereum_chain_and_boolean_rejected (test_permission_gate.GateTests.test_nonethereum_chain_and_boolean_rejected) ... ok\ntest_oversized_policy_rejected (test_permission_gate.GateTests.test_oversized_policy_rejected) ... ok\ntest_policy_token_mismatch_rejected (test_permission_gate.GateTests.test_policy_token_mismatch_rejected) ... ok\ntest_real_deny_all_exposes_three_permissions_including_empty_balances (test_permission_gate.GateTests.test_real_deny_all_exposes_three_permissions_including_empty_balances) ... ok\ntest_unknown_policy_fields_and_schema_rejected (test_permission_gate.GateTests.test_unknown_policy_fields_and_schema_rejected) ... ok\ntest_unpaired_arguments_are_error (test_permission_gate.GateTests.test_unpaired_arguments_are_error) ... ok\ntest_workspace_path_rejects_external_input (test_permission_gate.GateTests.test_workspace_path_rejects_external_input) ... ok\ntest_zero_address_rejected (test_permission_gate.GateTests.test_zero_address_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.019s\n\nOK\n"
+    },
+    {
+      "name": "line-3-code-changes-suite",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "line-3/tools/code-changes",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "test_beacon_runtime_change_detected (test_code_changes.ChangesTests.test_beacon_runtime_change_detected) ... ok\ntest_changed_terminal_code (test_code_changes.ChangesTests.test_changed_terminal_code) ... ok\ntest_path_changes_without_effective_hash_change (test_code_changes.ChangesTests.test_path_changes_without_effective_hash_change) ... ok\ntest_public_source_mismatch (test_code_changes.ChangesTests.test_public_source_mismatch) ... ok\ntest_public_transport_provenance (test_code_changes.ChangesTests.test_public_transport_provenance) ... ok\ntest_real_observation_self_comparison (test_code_changes.ChangesTests.test_real_observation_self_comparison) ... ok\ntest_reject_target_order_fork_and_tampered_hash (test_code_changes.ChangesTests.test_reject_target_order_fork_and_tampered_hash) ... ok\ntest_relay_redaction_and_label_tampering (test_code_changes.ChangesTests.test_relay_redaction_and_label_tampering) ... ok\ntest_same_block_conflicting_evidence (test_code_changes.ChangesTests.test_same_block_conflicting_evidence) ... ok\ntest_unchanged_later_block (test_code_changes.ChangesTests.test_unchanged_later_block) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.030s\n\nOK\n"
+    },
+    {
+      "name": "line-3-code-lens-suite",
       "command": [
         "python3",
         "-B",
@@ -58,10 +153,48 @@
       "expected_exit": 0,
       "exit": 0,
       "passed": true,
-      "test_output": "test_beacon_candidate (test_code_lens.CodeLensTests.test_beacon_candidate) ... ok\ntest_eip1967_implementation_candidate (test_code_lens.CodeLensTests.test_eip1967_implementation_candidate) ... ok\ntest_ethereum_keccak_vectors (test_code_lens.CodeLensTests.test_ethereum_keccak_vectors) ... ok\ntest_exact_minimal_proxy (test_code_lens.CodeLensTests.test_exact_minimal_proxy) ... ok\ntest_expected_reviewed_hash_match_and_mismatch (test_code_lens.CodeLensTests.test_expected_reviewed_hash_match_and_mismatch) ... ok\ntest_files_must_stay_in_workspace (test_code_lens.CodeLensTests.test_files_must_stay_in_workspace) ... ok\ntest_malformed_runtime_and_target (test_code_lens.CodeLensTests.test_malformed_runtime_and_target) ... ok\ntest_no_code_or_zero_result_beacon (test_code_lens.CodeLensTests.test_no_code_or_zero_result_beacon) ... ok\ntest_no_truncated_proxy_path (test_code_lens.CodeLensTests.test_no_truncated_proxy_path) ... ok\ntest_proxy_cycle_and_depth_limit (test_code_lens.CodeLensTests.test_proxy_cycle_and_depth_limit) ... ok\ntest_read_operations_are_hash_pinned (test_code_lens.CodeLensTests.test_read_operations_are_hash_pinned) ... ok\ntest_real_committed_observations (test_code_lens.CodeLensTests.test_real_committed_observations) ... ok\ntest_reject_ambiguous_or_malformed_proxy_slots (test_code_lens.CodeLensTests.test_reject_ambiguous_or_malformed_proxy_slots) ... ok\ntest_reject_empty_target_wrong_chain_and_reorg (test_code_lens.CodeLensTests.test_reject_empty_target_wrong_chain_and_reorg) ... ok\ntest_rpc_envelope_and_read_only_guard (test_code_lens.CodeLensTests.test_rpc_envelope_and_read_only_guard) ... ok\ntest_tampered_observation_rejected (test_code_lens.CodeLensTests.test_tampered_observation_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.317s\n\nOK\n"
+      "stderr": "test_beacon_candidate (test_code_lens.CodeLensTests.test_beacon_candidate) ... ok\ntest_eip1967_implementation_candidate (test_code_lens.CodeLensTests.test_eip1967_implementation_candidate) ... ok\ntest_ethereum_keccak_vectors (test_code_lens.CodeLensTests.test_ethereum_keccak_vectors) ... ok\ntest_exact_minimal_proxy (test_code_lens.CodeLensTests.test_exact_minimal_proxy) ... ok\ntest_expected_reviewed_hash_match_and_mismatch (test_code_lens.CodeLensTests.test_expected_reviewed_hash_match_and_mismatch) ... ok\ntest_files_must_stay_in_workspace (test_code_lens.CodeLensTests.test_files_must_stay_in_workspace) ... ok\ntest_malformed_runtime_and_target (test_code_lens.CodeLensTests.test_malformed_runtime_and_target) ... ok\ntest_no_code_or_zero_result_beacon (test_code_lens.CodeLensTests.test_no_code_or_zero_result_beacon) ... ok\ntest_no_truncated_proxy_path (test_code_lens.CodeLensTests.test_no_truncated_proxy_path) ... ok\ntest_proxy_cycle_and_depth_limit (test_code_lens.CodeLensTests.test_proxy_cycle_and_depth_limit) ... ok\ntest_read_operations_are_hash_pinned (test_code_lens.CodeLensTests.test_read_operations_are_hash_pinned) ... ok\ntest_real_committed_observations (test_code_lens.CodeLensTests.test_real_committed_observations) ... ok\ntest_reject_ambiguous_or_malformed_proxy_slots (test_code_lens.CodeLensTests.test_reject_ambiguous_or_malformed_proxy_slots) ... ok\ntest_reject_empty_target_wrong_chain_and_reorg (test_code_lens.CodeLensTests.test_reject_empty_target_wrong_chain_and_reorg) ... ok\ntest_rpc_envelope_and_read_only_guard (test_code_lens.CodeLensTests.test_rpc_envelope_and_read_only_guard) ... ok\ntest_tampered_observation_rejected (test_code_lens.CodeLensTests.test_tampered_observation_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.086s\n\nOK\n"
     },
     {
-      "name": "line-4-suite",
+      "name": "line-3-code-opcodes-suite",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "line-3/tools/code-opcodes",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "test_push_data_is_skipped_and_actual_delegatecall_is_found (test_code_opcodes.CodeOpcodesTests.test_push_data_is_skipped_and_actual_delegatecall_is_found) ... ok\ntest_real_imd_metadata_is_not_executable_callcode (test_code_opcodes.CodeOpcodesTests.test_real_imd_metadata_is_not_executable_callcode) ... ok\ntest_real_zto (test_code_opcodes.CodeOpcodesTests.test_real_zto) ... ok\ntest_tampered_report_is_rejected (test_code_opcodes.CodeOpcodesTests.test_tampered_report_is_rejected) ... ok\ntest_unrecognized_tail_is_scanned (test_code_opcodes.CodeOpcodesTests.test_unrecognized_tail_is_scanned) ... ok\ntest_unresolved_signal_for_actual_delegation (test_code_opcodes.CodeOpcodesTests.test_unresolved_signal_for_actual_delegation) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.059s\n\nOK\n"
+    },
+    {
+      "name": "line-4-call-changes-suite",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "line-4/tools/call-changes",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "test_code_absent_stops_call (test_call_changes.CaptureTests.test_code_absent_stops_call) ... ok\ntest_finalized_default_and_explicit_height (test_call_changes.CaptureTests.test_finalized_default_and_explicit_height) ... ok\ntest_historical_block_pins_all_state_reads (test_call_changes.CaptureTests.test_historical_block_pins_all_state_reads) ... ok\ntest_invalid_block_and_call_fail_before_network (test_call_changes.CaptureTests.test_invalid_block_and_call_fail_before_network) ... ok\ntest_read_only_transport_allowlist (test_call_changes.CaptureTests.test_read_only_transport_allowlist) ... ok\ntest_rpc_error_preserved_without_fabricating_data (test_call_changes.CaptureTests.test_rpc_error_preserved_without_fabricating_data) ... ok\ntest_unfinalized_request_stops_before_execution (test_call_changes.CaptureTests.test_unfinalized_request_stops_before_execution) ... ok\ntest_wrong_header_changed_header_and_wrong_chain (test_call_changes.CaptureTests.test_wrong_header_changed_header_and_wrong_chain) ... ok\ntest_all_call_fields_must_match (test_call_changes.CompareTests.test_all_call_fields_must_match) ... ok\ntest_block_identity_and_order (test_call_changes.CompareTests.test_block_identity_and_order) ... ok\ntest_custom_revert_data_compared_exactly (test_call_changes.CompareTests.test_custom_revert_data_compared_exactly) ... ok\ntest_different_interpretation_rejected (test_call_changes.CompareTests.test_different_interpretation_rejected) ... ok\ntest_equal_uint256_and_elapsed_context (test_call_changes.CompareTests.test_equal_uint256_and_elapsed_context) ... ok\ntest_explicit_empty_revert_bytes_are_evidence (test_call_changes.CompareTests.test_explicit_empty_revert_bytes_are_evidence) ... ok\ntest_false_is_retained_and_change_is_reported (test_call_changes.CompareTests.test_false_is_retained_and_change_is_reported) ... ok\ntest_inputs_not_mutated (test_call_changes.CompareTests.test_inputs_not_mutated) ... ok\ntest_large_error_is_rejected (test_call_changes.CompareTests.test_large_error_is_rejected) ... ok\ntest_missing_revert_data_is_inconclusive (test_call_changes.CompareTests.test_missing_revert_data_is_inconclusive) ... ok\ntest_noncanonical_bool_is_inconclusive (test_call_changes.CompareTests.test_noncanonical_bool_is_inconclusive) ... ok\ntest_normalized_hex_and_endpoint_provenance (test_call_changes.CompareTests.test_normalized_hex_and_endpoint_provenance) ... ok\ntest_omitted_sender_is_not_assumed_to_equal_explicit_sender (test_call_changes.CompareTests.test_omitted_sender_is_not_assumed_to_equal_explicit_sender) ... ok\ntest_raw_empty_result_is_comparable (test_call_changes.CompareTests.test_raw_empty_result_is_comparable) ... ok\ntest_return_revert_transition_does_not_require_revert_bytes (test_call_changes.CompareTests.test_return_revert_transition_does_not_require_revert_bytes) ... ok\ntest_rpc_failure_and_bad_abi_are_not_unchanged (test_call_changes.CompareTests.test_rpc_failure_and_bad_abi_are_not_unchanged) ... ok\ntest_same_block_difference_is_inconsistent_not_state_change (test_call_changes.CompareTests.test_same_block_difference_is_inconsistent_not_state_change) ... ok\ntest_same_block_identical_result (test_call_changes.CompareTests.test_same_block_identical_result) ... ok\ntest_signed_arbitrary_precision_delta (test_call_changes.CompareTests.test_signed_arbitrary_precision_delta) ... ok\ntest_strict_schema_and_chain (test_call_changes.CompareTests.test_strict_schema_and_chain) ... ok\ntest_cli_exit_codes_and_json_reports (test_call_changes.FileAndCLITests.test_cli_exit_codes_and_json_reports) ... ok\ntest_demo_uses_real_saved_pair_without_network (test_call_changes.FileAndCLITests.test_demo_uses_real_saved_pair_without_network) ... ok\ntest_duplicate_keys_nonfinite_numbers_and_oversized_files (test_call_changes.FileAndCLITests.test_duplicate_keys_nonfinite_numbers_and_oversized_files) ... ok\ntest_exclusive_save_and_round_trip (test_call_changes.FileAndCLITests.test_exclusive_save_and_round_trip) ... ok\ntest_recheck_older_block_fails_before_rpc (test_call_changes.FileAndCLITests.test_recheck_older_block_fails_before_rpc) ... ok\ntest_recheck_output_conflict_fails_before_rpc (test_call_changes.FileAndCLITests.test_recheck_output_conflict_fails_before_rpc) ... ok\ntest_recheck_preserves_sender_and_saves_raw_after (test_call_changes.FileAndCLITests.test_recheck_preserves_sender_and_saves_raw_after) ... ok\ntest_workspace_escape_rejected (test_call_changes.FileAndCLITests.test_workspace_escape_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 36 tests in 0.028s\n\nOK\n"
+    },
+    {
+      "name": "line-4-call-rehearsal-suite",
       "command": [
         "python3",
         "-B",
@@ -77,10 +210,29 @@
       "expected_exit": 0,
       "exit": 0,
       "passed": true,
-      "test_output": "test_bad_observation (test_rehearse.RehearsalTests.test_bad_observation) ... ok\ntest_block_change_discards_observation (test_rehearse.RehearsalTests.test_block_change_discards_observation) ... ok\ntest_cli_exit_codes_without_network (test_rehearse.RehearsalTests.test_cli_exit_codes_without_network) ... ok\ntest_custom_call_cannot_invent_sender (test_rehearse.RehearsalTests.test_custom_call_cannot_invent_sender) ... ok\ntest_empty_return_is_only_success_for_raw (test_rehearse.RehearsalTests.test_empty_return_is_only_success_for_raw) ... ok\ntest_error_string (test_rehearse.RehearsalTests.test_error_string) ... ok\ntest_false_is_not_success (test_rehearse.RehearsalTests.test_false_is_not_success) ... ok\ntest_hash_pinned_reads_and_postcheck (test_rehearse.RehearsalTests.test_hash_pinned_reads_and_postcheck) ... ok\ntest_large_runtime_code_and_bound (test_rehearse.RehearsalTests.test_large_runtime_code_and_bound) ... ok\ntest_missing_code_stops_before_call (test_rehearse.RehearsalTests.test_missing_code_stops_before_call) ... ok\ntest_panic_and_custom_error (test_rehearse.RehearsalTests.test_panic_and_custom_error) ... ok\ntest_read_only_allowlist (test_rehearse.RehearsalTests.test_read_only_allowlist) ... ok\ntest_reject_bad_inputs (test_rehearse.RehearsalTests.test_reject_bad_inputs) ... ok\ntest_rpc_envelope_validation (test_rehearse.RehearsalTests.test_rpc_envelope_validation) ... ok\ntest_rpc_failure_is_inconclusive (test_rehearse.RehearsalTests.test_rpc_failure_is_inconclusive) ... ok\ntest_saved_real_observation_offline (test_rehearse.RehearsalTests.test_saved_real_observation_offline) ... ok\ntest_sender_and_amount_required_for_transfer (test_rehearse.RehearsalTests.test_sender_and_amount_required_for_transfer) ... ok\ntest_truncated_revert_not_invented (test_rehearse.RehearsalTests.test_truncated_revert_not_invented) ... ok\ntest_workspace_escape (test_rehearse.RehearsalTests.test_workspace_escape) ... ok\ntest_wrong_chain_stops_before_call (test_rehearse.RehearsalTests.test_wrong_chain_stops_before_call) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.259s\n\nOK\n"
+      "stderr": "test_bad_observation (test_rehearse.RehearsalTests.test_bad_observation) ... ok\ntest_block_change_discards_observation (test_rehearse.RehearsalTests.test_block_change_discards_observation) ... ok\ntest_cli_exit_codes_without_network (test_rehearse.RehearsalTests.test_cli_exit_codes_without_network) ... ok\ntest_custom_call_cannot_invent_sender (test_rehearse.RehearsalTests.test_custom_call_cannot_invent_sender) ... ok\ntest_empty_return_is_only_success_for_raw (test_rehearse.RehearsalTests.test_empty_return_is_only_success_for_raw) ... ok\ntest_error_string (test_rehearse.RehearsalTests.test_error_string) ... ok\ntest_false_is_not_success (test_rehearse.RehearsalTests.test_false_is_not_success) ... ok\ntest_hash_pinned_reads_and_postcheck (test_rehearse.RehearsalTests.test_hash_pinned_reads_and_postcheck) ... ok\ntest_large_runtime_code_and_bound (test_rehearse.RehearsalTests.test_large_runtime_code_and_bound) ... ok\ntest_missing_code_stops_before_call (test_rehearse.RehearsalTests.test_missing_code_stops_before_call) ... ok\ntest_panic_and_custom_error (test_rehearse.RehearsalTests.test_panic_and_custom_error) ... ok\ntest_read_only_allowlist (test_rehearse.RehearsalTests.test_read_only_allowlist) ... ok\ntest_reject_bad_inputs (test_rehearse.RehearsalTests.test_reject_bad_inputs) ... ok\ntest_rpc_envelope_validation (test_rehearse.RehearsalTests.test_rpc_envelope_validation) ... ok\ntest_rpc_failure_is_inconclusive (test_rehearse.RehearsalTests.test_rpc_failure_is_inconclusive) ... ok\ntest_saved_real_observation_offline (test_rehearse.RehearsalTests.test_saved_real_observation_offline) ... ok\ntest_sender_and_amount_required_for_transfer (test_rehearse.RehearsalTests.test_sender_and_amount_required_for_transfer) ... ok\ntest_truncated_revert_not_invented (test_rehearse.RehearsalTests.test_truncated_revert_not_invented) ... ok\ntest_workspace_escape (test_rehearse.RehearsalTests.test_workspace_escape) ... ok\ntest_wrong_chain_stops_before_call (test_rehearse.RehearsalTests.test_wrong_chain_stops_before_call) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.089s\n\nOK\n"
     },
     {
-      "name": "line-1-demo",
+      "name": "line-4-call-witness-suite",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "line-4/tools/call-witness",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "test_common_finalized_uses_lower_head (test_call_witness.WitnessTests.test_common_finalized_uses_lower_head) ... ok\ntest_conflicting_same_block_result_is_disagreement (test_call_witness.WitnessTests.test_conflicting_same_block_result_is_disagreement) ... ok\ntest_different_block_rejected (test_call_witness.WitnessTests.test_different_block_rejected) ... ok\ntest_disagreeing_common_header_rejected (test_call_witness.WitnessTests.test_disagreeing_common_header_rejected) ... ok\ntest_real_saved_zto_agrees (test_call_witness.WitnessTests.test_real_saved_zto_agrees) ... ok\ntest_same_provider_rejected (test_call_witness.WitnessTests.test_same_provider_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "name": "zto-band-demo",
       "command": [
         "python3",
         "-B",
@@ -93,34 +245,12 @@
       "expected_exit": 0,
       "exit": 0,
       "passed": true,
-      "stdout": {
+      "stderr": "",
+      "stdout_sha256": "364de8b8b6392b427203a378367a7f67d4c540ff33c65a2e01841f9d39f2d55c",
+      "summary": {
         "schema": "zto-band-report-v1",
-        "pool_id": "0x888b07bd282f587d3c6b0fcb23e7fc55bbb33abe8910dd7492db815dc8dc5592",
-        "chain_id": 1,
-        "block_number": 26183687,
-        "block_hash": "0x15eff6a8ef66c88a11f6c7d53d77858d1064af9f5c23baa7efa9a2ed665038fe",
-        "block_time_utc": "2026-10-13T12:51:35+00:00",
-        "input_token": "ZTO",
-        "output_token": "IMD",
-        "pool_tick": 110768,
-        "active_liquidity_raw": "1395488085257384418720526",
-        "hook": "0x784ff9a3ac5d88a30bfff6f7f2a270161fbe6000",
-        "swap_hook_permissions": false,
-        "fee_pips": 12500,
-        "boundary_tick": 110820,
-        "sqrt_price_limit_x96": "20192263023577195106898151624887",
-        "spot_imd_per_zto": "0.000015475587203343642706",
-        "interval_input_cap_raw": "935043391050033044714331",
-        "interval_input_cap": "935043.391050033044714331",
-        "requested_input_raw": "1000000000000000000",
-        "requested_input": "1",
-        "scope": "Core pool estimate inside one tick-spacing interval; not an executable quote.",
-        "limitations": [
-          "No initialized tick is crossed; larger trades are refused.",
-          "No token transfer behavior, router, gas, slippage tolerance or MEV simulation.",
-          "Observation is RPC data, not a cryptographic state proof or a freshness guarantee."
-        ],
         "status": "estimated",
+        "block_number": 26183687,
         "estimate": {
           "sqrt_price_after_x96": "20139840025375173566845336148180",
           "input_to_pool_raw": "987500000000000000",
@@ -132,114 +262,102 @@
           "fee": "0.0125",
           "spot_movement_bps": "0.000055675552587221436987"
         }
-      },
-      "stderr": ""
+      }
     },
     {
-      "name": "line-1-reverse",
+      "name": "zto-path-demo",
       "command": [
         "python3",
         "-B",
-        "line-1/tools/zto-band/zto_band.py",
+        "line-1/tools/zto-path/zto_path.py",
         "--snapshot",
-        "line-1/tools/zto-band/observation.json",
-        "--input",
-        "IMD",
-        "--amount",
-        "0.1"
+        "line-1/tools/zto-path/observation.json"
       ],
       "expected_exit": 0,
       "exit": 0,
       "passed": true,
-      "stdout": {
-        "schema": "zto-band-report-v1",
-        "pool_id": "0x888b07bd282f587d3c6b0fcb23e7fc55bbb33abe8910dd7492db815dc8dc5592",
-        "chain_id": 1,
-        "block_number": 26183687,
-        "block_hash": "0x15eff6a8ef66c88a11f6c7d53d77858d1064af9f5c23baa7efa9a2ed665038fe",
-        "block_time_utc": "2026-10-13T12:51:35+00:00",
-        "input_token": "IMD",
-        "output_token": "ZTO",
-        "pool_tick": 110768,
-        "active_liquidity_raw": "1395488085257384418720526",
-        "hook": "0x784ff9a3ac5d88a30bfff6f7f2a270161fbe6000",
-        "swap_hook_permissions": false,
-        "fee_pips": 12500,
-        "boundary_tick": 110760,
-        "sqrt_price_limit_x96": "20131780028458469145459321100494",
-        "spot_imd_per_zto": "0.000015475587203343642706",
-        "interval_input_cap_raw": "2225677704163699303",
-        "interval_input_cap": "2.225677704163699303",
-        "requested_input_raw": "100000000000000000",
-        "requested_input": "0.1",
-        "scope": "Core pool estimate inside one tick-spacing interval; not an executable quote.",
-        "limitations": [
-          "No initialized tick is crossed; larger trades are refused.",
-          "No token transfer behavior, router, gas, slippage tolerance or MEV simulation.",
-          "Observation is RPC data, not a cryptographic state proof or a freshness guarantee."
-        ],
+      "stderr": "",
+      "stdout_sha256": "6f765493b32a8bd0722c78e673958a660373f6f8636b00dc76c373b85ef7d334",
+      "summary": {
+        "schema": "zto-path-report-v1",
         "status": "estimated",
+        "block": {
+          "number": "0x18f8a44",
+          "hash": "0xcd8e7e4ba940af1feac8d6b441c37ef0230c4bcd2fd55d36376038a4b4c36650",
+          "timestamp": "0x6ace4457"
+        },
         "estimate": {
-          "sqrt_price_after_x96": "20139477696611640365913380052579",
-          "input_to_pool_raw": "98750000000000000",
-          "fee_raw": "1250000000000000",
-          "input_consumed_raw": "100000000000000000",
+          "input_consumed_raw": "100000000000000000000000000",
           "input_unspent_raw": "0",
-          "output_raw": "6380903186478923923122",
-          "output": "6380.903186478923923122",
-          "fee": "0.00125",
-          "spot_movement_bps": "0.359754040740507671040114"
+          "output_raw": "1196130391948897309582",
+          "output": "1196.130391948897309582",
+          "fee_raw": "1250000000000000000000000",
+          "fee": "1250000",
+          "sqrt_price_after_x96": "25739728713635116843076933370750",
+          "tick_after": 115674,
+          "liquidity_after_raw": "1395488085257384418720526"
         }
-      },
-      "stderr": ""
+      }
     },
     {
-      "name": "line-1-outside-interval",
+      "name": "zto-path-incomplete",
       "command": [
         "python3",
         "-B",
-        "line-1/tools/zto-band/zto_band.py",
+        "line-1/tools/zto-path/zto_path.py",
         "--snapshot",
-        "line-1/tools/zto-band/observation.json",
+        "line-1/tools/zto-path/observation.json",
         "--amount",
-        "1000000"
+        "1000000000"
       ],
       "expected_exit": 2,
       "exit": 2,
       "passed": true,
-      "stdout": {
-        "schema": "zto-band-report-v1",
-        "pool_id": "0x888b07bd282f587d3c6b0fcb23e7fc55bbb33abe8910dd7492db815dc8dc5592",
-        "chain_id": 1,
-        "block_number": 26183687,
-        "block_hash": "0x15eff6a8ef66c88a11f6c7d53d77858d1064af9f5c23baa7efa9a2ed665038fe",
-        "block_time_utc": "2026-10-13T12:51:35+00:00",
-        "input_token": "ZTO",
-        "output_token": "IMD",
-        "pool_tick": 110768,
-        "active_liquidity_raw": "1395488085257384418720526",
-        "hook": "0x784ff9a3ac5d88a30bfff6f7f2a270161fbe6000",
-        "swap_hook_permissions": false,
-        "fee_pips": 12500,
-        "boundary_tick": 110820,
-        "sqrt_price_limit_x96": "20192263023577195106898151624887",
-        "spot_imd_per_zto": "0.000015475587203343642706",
-        "interval_input_cap_raw": "935043391050033044714331",
-        "interval_input_cap": "935043.391050033044714331",
-        "requested_input_raw": "1000000000000000000000000",
-        "requested_input": "1000000",
-        "scope": "Core pool estimate inside one tick-spacing interval; not an executable quote.",
-        "limitations": [
-          "No initialized tick is crossed; larger trades are refused.",
-          "No token transfer behavior, router, gas, slippage tolerance or MEV simulation.",
-          "Observation is RPC data, not a cryptographic state proof or a freshness guarantee."
-        ],
-        "status": "outside_interval"
-      },
-      "stderr": ""
+      "stderr": "",
+      "stdout_sha256": "1f3623547a91fbca1a6b2f9ec077a8a257f10596c11d49af52f9713e81a5190e",
+      "summary": {
+        "schema": "zto-path-report-v1",
+        "status": "outside_coverage",
+        "block": {
+          "number": "0x18f8a44",
+          "hash": "0xcd8e7e4ba940af1feac8d6b441c37ef0230c4bcd2fd55d36376038a4b4c36650",
+          "timestamp": "0x6ace4457"
+        }
+      }
     },
     {
-      "name": "line-2-demo",
+      "name": "zto-sizes-demo",
+      "command": [
+        "python3",
+        "-B",
+        "line-1/tools/zto-sizes/zto_sizes.py",
+        "--amount",
+        "1",
+        "--amount",
+        "100000000",
+        "--amount",
+        "1000000000",
+        "--slippage-bps",
+        "100"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "",
+      "stdout_sha256": "7be2941d16924416336685d88f161ea23fd3d9eed4f25779b51220057042f349",
+      "summary": {
+        "schema": "zto-sizes-report-v1",
+        "candidate_count": 2,
+        "largest_candidate_input_raw": "100000000000000000000000000",
+        "block": {
+          "number": "0x18f8a44",
+          "hash": "0xcd8e7e4ba940af1feac8d6b441c37ef0230c4bcd2fd55d36376038a4b4c36650",
+          "timestamp": "0x6ace4457"
+        }
+      }
+    },
+    {
+      "name": "allowance-lens-demo",
       "command": [
         "python3",
         "-B",
@@ -248,483 +366,80 @@
       "expected_exit": 0,
       "exit": 0,
       "passed": true,
-      "stdout": {
-        "schema": "allowance-lens-report-v1",
-        "chain_id": 1,
-        "token": "ZTO",
-        "token_address": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
-        "decimals": 18,
-        "block_number": 26183751,
-        "block_hash": "0x1da3e2b8fcff2b28f8048862076f04b03db439c94f518681039870a9f1cae19d",
-        "block_time_utc": "2026-10-13T13:04:23+00:00",
-        "source": "https://ethereum-rpc.publicnode.com",
-        "discovery": {
-          "mode": "approval_window",
-          "from_block": 26182252,
-          "to_block": 26183751,
-          "owner": null,
-          "spenders": []
-        },
-        "complete_wallet_audit": false,
-        "pair_count": 19,
-        "approval_event_count": 27,
-        "active_pair_count": 3,
-        "pairs": [
-          {
-            "owner": "0x051fae10d5237bf7262d8477e2771c14545b5b97",
-            "spender": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "3005115972842287667631597",
-            "balance": "3005115.972842287667631597",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26183696,
-              "log_index": 324,
-              "amount_raw": "68975386376645600000000",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0x2c6b6955ea01546343c363d8efbb31fac3f8cfb2",
-            "spender": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "0",
-            "balance": "0",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26182718,
-              "log_index": 305,
-              "amount_raw": "2463168481877638418133968",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0x35f4b9acd41584df18e88cc7ebfbd2ea1e270f62",
-            "spender": "0x4313c378cc91ea583c91387b9216e2c03096b27f",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "0",
-            "balance": "0",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26182329,
-              "log_index": 441,
-              "amount_raw": "625120181820414003321601",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0x37b4df3817b864d6afa56a21bd92933f4721a1b6",
-            "spender": "0x0000000000001ff3684f28c67538d4d072c22734",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "0",
-            "balance": "0",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26182655,
-              "log_index": 37,
-              "amount_raw": "1442670229245098260699194",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0x4662b891269e2196e67cca73e4b7812dd91c7ae3",
-            "spender": "0x0000000000001ff3684f28c67538d4d072c22734",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "0",
-            "balance": "0",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26182314,
-              "log_index": 43,
-              "amount_raw": "532472914880212486835505",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0x632ee80c099662ee9880d04a307401de195dabf8",
-            "spender": "0x765956a7307222346b08fff681820a5d77e92028",
-            "allowance_raw": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
-            "allowance": "115792089237316195423570985008687907853269984665640564039457.584007913129639935",
-            "balance_raw": "0",
-            "balance": "0",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": true,
-            "status": "active_zero_balance",
-            "last_observed_approval": {
-              "block_number": 26182615,
-              "log_index": 362,
-              "amount_raw": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
-              "differs_from_current_allowance": false
-            }
-          },
-          {
-            "owner": "0x77460867cc5e9b19cda24040e0d28e08b6916c76",
-            "spender": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "0",
-            "balance": "0",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26182990,
-              "log_index": 307,
-              "amount_raw": "0",
-              "differs_from_current_allowance": false
-            }
-          },
-          {
-            "owner": "0x799feaf061773be889d8a029d7381e24f79ac08e",
-            "spender": "0x227be0f88ecb7899a0e6e0347888b909d622c8e1",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "789511340361653663252300",
-            "balance": "789511.3403616536632523",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26182276,
-              "log_index": 262,
-              "amount_raw": "0",
-              "differs_from_current_allowance": false
-            }
-          },
-          {
-            "owner": "0x824932206b216977e3a94094a9d6ecfc6851f0c8",
-            "spender": "0x02e5be68d46dac0b524905bff209cf47ee6db2a9",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "100000683029575604657695",
-            "balance": "100000.683029575604657695",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26182373,
-              "log_index": 87,
-              "amount_raw": "100000000000000000000000",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0xb78c3a71ecf26ade99056db53da01d78d3261e8f",
-            "spender": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "0",
-            "balance": "0",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26182621,
-              "log_index": 384,
-              "amount_raw": "173564345484342798014191",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
-            "spender": "0x0000000000001ff3684f28c67538d4d072c22734",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "0",
-            "balance": "0",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26183696,
-              "log_index": 327,
-              "amount_raw": "68975386376645600000000",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
-            "spender": "0x0005ea683517b3a4463bfd798c9850ad2d586795",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "0",
-            "balance": "0",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26183612,
-              "log_index": 192,
-              "amount_raw": "39962825278810400000000",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
-            "spender": "0x6131b5fae19ea4f9d964eac0408e4408b66337b5",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "0",
-            "balance": "0",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26182916,
-              "log_index": 1127,
-              "amount_raw": "290019138058287687770873",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0xbadb536e95f450a4978445d7a0e363a42ec37eb4",
-            "spender": "0x765956a7307222346b08fff681820a5d77e92028",
-            "allowance_raw": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
-            "allowance": "115792089237316195423570985008687907853269984665640564039457.584007913129639935",
-            "balance_raw": "0",
-            "balance": "0",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": true,
-            "status": "active_zero_balance",
-            "last_observed_approval": {
-              "block_number": 26182276,
-              "log_index": 217,
-              "amount_raw": "115792089237316195423570985008687907853269984665640564039457584007913129639935",
-              "differs_from_current_allowance": false
-            }
-          },
-          {
-            "owner": "0xca1a6e5fe34293775fe0dd109d74539b567eec34",
-            "spender": "0x0000000000001ff3684f28c67538d4d072c22734",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "30552541524306096706135",
-            "balance": "30552.541524306096706135",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26182518,
-              "log_index": 654,
-              "amount_raw": "34452865800000000000000",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0xca1a6e5fe34293775fe0dd109d74539b567eec34",
-            "spender": "0x02e5be68d46dac0b524905bff209cf47ee6db2a9",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "30552541524306096706135",
-            "balance": "30552.541524306096706135",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26182349,
-              "log_index": 159,
-              "amount_raw": "217626798000000000000000",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0xcb3c89c1145055a88504e71f7c5ad733169be093",
-            "spender": "0x40aa958dd87fc8305b97f2ba922cddca374bcd7f",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "0",
-            "balance": "0",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26182795,
-              "log_index": 814,
-              "amount_raw": "491411610157172875266853",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0xd5d0448415e9cb4586aa0d801be1cecaa1b1e2f7",
-            "spender": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be",
-            "allowance_raw": "0",
-            "allowance": "0",
-            "balance_raw": "0",
-            "balance": "0",
-            "spendable_upper_bound_raw": "0",
-            "spendable_upper_bound": "0",
-            "max_uint256": false,
-            "status": "no_current_allowance",
-            "last_observed_approval": {
-              "block_number": 26182916,
-              "log_index": 1124,
-              "amount_raw": "290019138058287687770873",
-              "differs_from_current_allowance": true
-            }
-          },
-          {
-            "owner": "0xdd0c9e144197502537cef07eb7b7cb787c9d05ec",
-            "spender": "0x40aa958dd87fc8305b97f2ba922cddca374bcd7f",
-            "allowance_raw": "999363625607574787149845274",
-            "allowance": "999363625.607574787149845274",
-            "balance_raw": "636374392425212850154727",
-            "balance": "636374.392425212850154727",
-            "spendable_upper_bound_raw": "636374392425212850154727",
-            "spendable_upper_bound": "636374.392425212850154727",
-            "max_uint256": false,
-            "status": "active_with_balance",
-            "last_observed_approval": {
-              "block_number": 26183056,
-              "log_index": 36,
-              "amount_raw": "1000000000000000000000000000",
-              "differs_from_current_allowance": true
-            }
-          }
-        ],
-        "owners": [
-          {
-            "owner": "0x051fae10d5237bf7262d8477e2771c14545b5b97",
-            "balance_raw": "3005115972842287667631597",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0x2c6b6955ea01546343c363d8efbb31fac3f8cfb2",
-            "balance_raw": "0",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0x35f4b9acd41584df18e88cc7ebfbd2ea1e270f62",
-            "balance_raw": "0",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0x37b4df3817b864d6afa56a21bd92933f4721a1b6",
-            "balance_raw": "0",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0x4662b891269e2196e67cca73e4b7812dd91c7ae3",
-            "balance_raw": "0",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0x632ee80c099662ee9880d04a307401de195dabf8",
-            "balance_raw": "0",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0x77460867cc5e9b19cda24040e0d28e08b6916c76",
-            "balance_raw": "0",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0x799feaf061773be889d8a029d7381e24f79ac08e",
-            "balance_raw": "789511340361653663252300",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0x824932206b216977e3a94094a9d6ecfc6851f0c8",
-            "balance_raw": "100000683029575604657695",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0xb78c3a71ecf26ade99056db53da01d78d3261e8f",
-            "balance_raw": "0",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
-            "balance_raw": "0",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0xbadb536e95f450a4978445d7a0e363a42ec37eb4",
-            "balance_raw": "0",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0xca1a6e5fe34293775fe0dd109d74539b567eec34",
-            "balance_raw": "30552541524306096706135",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0xcb3c89c1145055a88504e71f7c5ad733169be093",
-            "balance_raw": "0",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0xd5d0448415e9cb4586aa0d801be1cecaa1b1e2f7",
-            "balance_raw": "0",
-            "combined_spendable_upper_bound_raw": "0",
-            "combined_spendable_upper_bound": "0"
-          },
-          {
-            "owner": "0xdd0c9e144197502537cef07eb7b7cb787c9d05ec",
-            "balance_raw": "636374392425212850154727",
-            "combined_spendable_upper_bound_raw": "636374392425212850154727",
-            "combined_spendable_upper_bound": "636374.392425212850154727"
-          }
-        ],
-        "limitations": [
-          "Only the listed pairs are checked. A bounded event window can miss older approvals.",
-          "Zero balance does not revoke permission; future receipts may become spendable.",
-          "Upper bounds assume standard ERC-20 semantics; transfers may fail or have other restrictions.",
-          "Per-spender bounds overlap. Owner totals cap their sum at the same owner balance.",
-          "Permit2 sub-permissions, unused signatures, other tokens and chains are not inspected.",
-          "RPC responses are trusted, not cryptographic proofs; saved observations are historical."
-        ]
-      },
       "stderr": "",
-      "matches_recorded_report": true
+      "stdout_sha256": "315b3c658fb2b18fa9fde99a98bc908059b0c056b8f9e2d39c5ddf8b798d2d03",
+      "summary": {
+        "schema": "allowance-lens-report-v1",
+        "block_number": 26183751
+      }
     },
     {
-      "name": "line-3-zto",
+      "name": "allowance-changes-demo",
+      "command": [
+        "python3",
+        "-B",
+        "line-2/tools/allowance-changes/allowance_changes.py"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "",
+      "stdout_sha256": "413c6553dfd332a4575e74d30b054352593dd20e529c62126ef9230b003695e7",
+      "summary": {
+        "schema": "allowance-changes-report-v1",
+        "counts": {
+          "unchanged": 19
+        }
+      }
+    },
+    {
+      "name": "permission-gate-demo",
+      "command": [
+        "python3",
+        "-B",
+        "line-2/tools/permission-gate/permission_gate.py"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "",
+      "stdout_sha256": "14bad9182bcb7d537df8feaa9ccfe3661cd6437e596bb61e603253eefb49eac2",
+      "summary": {
+        "schema": "permission-gate-report-v1",
+        "decision": "deny",
+        "measured_pair_count": 19,
+        "violating_pair_count": 3,
+        "missing_pair_count": 0,
+        "block_number": 26184897
+      }
+    },
+    {
+      "name": "permission-gate-explicit-deny",
+      "command": [
+        "python3",
+        "-B",
+        "line-2/tools/permission-gate/permission_gate.py",
+        "--observation",
+        "line-2/tools/permission-gate/live-observation.json",
+        "--policy",
+        "line-2/tools/permission-gate/demo-policy.json"
+      ],
+      "expected_exit": 3,
+      "exit": 3,
+      "passed": true,
+      "stderr": "",
+      "stdout_sha256": "25761d005c00489cbda22adb06e85afd72a4a315ff067d030824d6ef9251ade7",
+      "summary": {
+        "schema": "permission-gate-report-v1",
+        "decision": "deny",
+        "measured_pair_count": 19,
+        "violating_pair_count": 3,
+        "missing_pair_count": 0,
+        "block_number": 26184897
+      }
+    },
+    {
+      "name": "code-lens-demo",
       "command": [
         "python3",
         "-B",
@@ -735,36 +450,79 @@
       "expected_exit": 0,
       "exit": 0,
       "passed": true,
-      "stdout": {
-        "verified": true,
-        "effective_address": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
-        "effective_code_hash": "0x24e03ed7d7d3d6dc010b9a9836e419a3eb4215383b463f4e6685b4816435f16d",
-        "scope": "offline consistency only; not chain authenticity"
-      },
-      "stderr": ""
+      "stderr": "",
+      "stdout_sha256": "8cdd4d23b97857392bbee3259b72f797a3fcb71ed1c83be337d7bbb662e02db4",
+      "summary": {
+        "verified": true
+      }
     },
     {
-      "name": "line-3-imd",
+      "name": "code-changes-demo",
       "command": [
         "python3",
         "-B",
-        "line-3/tools/code-lens/code_lens.py",
-        "--verify",
+        "line-3/tools/code-changes/code_changes.py",
+        "--before",
+        "line-3/tools/code-lens/zto-observation.json",
+        "--after",
+        "line-3/tools/code-changes/zto-after.json"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "",
+      "stdout_sha256": "c2b876a9a88109b94dd249d2f6c425e7a1be845bc3e378601510e09d7168812c",
+      "summary": {
+        "schema": "code-changes-v1",
+        "status": "unchanged-at-observed-blocks"
+      }
+    },
+    {
+      "name": "code-opcodes-zto",
+      "command": [
+        "python3",
+        "-B",
+        "line-3/tools/code-opcodes/code_opcodes.py",
+        "--report",
+        "line-3/tools/code-lens/zto-observation.json"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "",
+      "stdout_sha256": "30baa76ad27838b0a0cf06e465a61f9eae943fc9e6e2b7de8dc7baf04f70e85f",
+      "summary": {
+        "schema": "code-opcodes-v1",
+        "block": {
+          "number": "0x18f8885",
+          "hash": "0x4d3b4ac38ef90af80a7020933c15ed6b6b7175efe4c32cd20e1ab9385552fdd4"
+        }
+      }
+    },
+    {
+      "name": "code-opcodes-imd",
+      "command": [
+        "python3",
+        "-B",
+        "line-3/tools/code-opcodes/code_opcodes.py",
+        "--report",
         "line-3/tools/code-lens/imd-observation.json"
       ],
       "expected_exit": 0,
       "exit": 0,
       "passed": true,
-      "stdout": {
-        "verified": true,
-        "effective_address": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
-        "effective_code_hash": "0x79a1ae149d27d4aae006d4dd75cb834222c9623799bbf34359428aaf66fec3bf",
-        "scope": "offline consistency only; not chain authenticity"
-      },
-      "stderr": ""
+      "stderr": "",
+      "stdout_sha256": "86ee24c7b0a4870d8880827af801732ff1ef852ad7a1501ecbdb31a322a7befe",
+      "summary": {
+        "schema": "code-opcodes-v1",
+        "block": {
+          "number": "0x18f8885",
+          "hash": "0x4d3b4ac38ef90af80a7020933c15ed6b6b7175efe4c32cd20e1ab9385552fdd4"
+        }
+      }
     },
     {
-      "name": "line-4-zto",
+      "name": "call-rehearsal-demo",
       "command": [
         "python3",
         "-B",
@@ -775,56 +533,15 @@
       "expected_exit": 0,
       "exit": 0,
       "passed": true,
-      "stdout": {
-        "chain_id": 1,
+      "stderr": "",
+      "stdout_sha256": "79b96deff822b132af814a7abef4b60e2498040f5d33302a3ff0bfb19cdde760",
+      "summary": {
         "block_number": 26183845,
-        "block_hash": "0x644962fe0c9268aea3a3222fc32fc97a53030aab1f5298f5a570cf540bdaaeea",
-        "call": {
-          "to": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
-          "data": "0x18160ddd",
-          "value": "0x0"
-        },
-        "result": {
-          "status": "returned",
-          "raw": "0x0000000000000000000000000000000000000000033b2e3c9fd0803ce8000000",
-          "uint256": "1000000000000000000000000000"
-        },
         "limits": "Provider-reported simulation at a finalized historical state; no transaction sent. No gas estimate, receipt, state diff, authenticity proof or guarantee of future execution."
-      },
-      "stderr": ""
+      }
     },
     {
-      "name": "line-4-imd",
-      "command": [
-        "python3",
-        "-B",
-        "line-4/tools/call-rehearsal/rehearse.py",
-        "replay",
-        "line-4/tools/call-rehearsal/imd-observation.json"
-      ],
-      "expected_exit": 0,
-      "exit": 0,
-      "passed": true,
-      "stdout": {
-        "chain_id": 1,
-        "block_number": 26183877,
-        "block_hash": "0xd01fdd4353723ef9fa5fa2c2b7ffa4bb4048a74bea2dbff2d27b645e5f5de6c2",
-        "call": {
-          "to": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
-          "data": "0x18160ddd",
-          "value": "0x0"
-        },
-        "result": {
-          "status": "returned",
-          "raw": "0x000000000000000000000000000000000000000000037404bb132c68ebb70000",
-          "uint256": "4174659238000000000000000"
-        },
-        "limits": "Provider-reported simulation at a finalized historical state; no transaction sent. No gas estimate, receipt, state diff, authenticity proof or guarantee of future execution."
-      },
-      "stderr": ""
-    },
-    {
-      "name": "line-4-revert",
+      "name": "call-rehearsal-revert",
       "command": [
         "python3",
         "-B",
@@ -835,29 +552,121 @@
       "expected_exit": 1,
       "exit": 1,
       "passed": true,
-      "stdout": {
-        "chain_id": 1,
+      "stderr": "",
+      "stdout_sha256": "8c5c766e01d270efd94d4063ded382ae7c68a67acf2a64e3aaa9db191d8f6ca0",
+      "summary": {
         "block_number": 26183877,
-        "block_hash": "0xd01fdd4353723ef9fa5fa2c2b7ffa4bb4048a74bea2dbff2d27b645e5f5de6c2",
-        "call": {
-          "to": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
-          "data": "0xffffffff",
-          "value": "0x0",
-          "from": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7"
-        },
-        "result": {
-          "status": "reverted",
-          "rpc_error": {
-            "code": 3,
-            "message": "execution reverted"
-          }
-        },
         "limits": "Provider-reported simulation at a finalized historical state; no transaction sent. No gas estimate, receipt, state diff, authenticity proof or guarantee of future execution."
-      },
-      "stderr": ""
+      }
     },
     {
-      "name": "shared-context-suite",
+      "name": "call-changes-demo",
+      "command": [
+        "python3",
+        "-B",
+        "line-4/tools/call-changes/call_changes.py",
+        "demo"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "",
+      "stdout_sha256": "347e9886ea890c7c6f73239925f15d8e4f9db9547f17dc6a0ce18eb53a986350",
+      "summary": {
+        "schema": "call-changes-v1",
+        "verdict": "unchanged",
+        "limits": "Comparison of provider-reported historical eth_call results, not receipts or state diffs. Equal return bytes do not prove equal side effects, code, balances, gas use or safety. No transaction was signed or sent. Files do not authenticate RPC or prove canonicality. No guarantee of execution at a future block; omitted gas/fee fields use provider defaults."
+      }
+    },
+    {
+      "name": "call-witness-demo",
+      "command": [
+        "python3",
+        "-B",
+        "line-4/tools/call-witness/call_witness.py",
+        "demo"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "",
+      "stdout_sha256": "67acf532773906bca2828b9d8cd933f58ac6c303a76b96db672729276809ffda",
+      "summary": {
+        "schema": "call-witness-v1",
+        "verdict": "agree",
+        "block": {
+          "number": "0x18f8d21",
+          "hash": "0xa15b57ef67efc19a40505b4d28f5ed90bdcde23a17a315702c133c33b9d62593",
+          "timestamp": "0x6ace66d7"
+        },
+        "limits": "Two unauthenticated public RPC observations at one finalized block. Agreement of return or revert bytes does not prove safety, gas, state effects, provider independence, or future execution. Nothing sent."
+      }
+    },
+    {
+      "name": "contract-context-demo",
+      "command": [
+        "python3",
+        "-B",
+        "shared/contract-context/context.py",
+        "demo"
+      ],
+      "expected_exit": 2,
+      "exit": 2,
+      "passed": true,
+      "stderr": "",
+      "stdout_sha256": "ee0256ed3c51d94f2a4ef57ec0cd7f07f782b230abc1cf9fa6a058affb544290",
+      "summary": {
+        "schema": "contract-context-assessment-v1",
+        "status": "context_mismatch",
+        "coherent": false,
+        "limits": [
+          "Offline checks establish internal consistency, not chain authenticity.",
+          "A shared block and target link evidence; they do not certify contract safety.",
+          "Proxy slots identify candidates, not proof of actual execution routing.",
+          "No receipt, gas estimate, state diff or guarantee of future execution.",
+          "Source observations remain historical; no keys or transactions are involved."
+        ]
+      }
+    },
+    {
+      "name": "change-context-demo",
+      "command": [
+        "python3",
+        "-B",
+        "shared/change-context/change_context.py"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "",
+      "stdout_sha256": "2e8368b3d07b6be97c5cb21b3cb0f733b32a9a36b6f6e5b7f4164a686c199547",
+      "summary": {
+        "schema": "change-context-v1",
+        "status": "different_blocks",
+        "limits": "This joins report metadata; it does not replay raw RPC evidence, authenticate a provider, prove continuous state, or predict a future transaction."
+      }
+    },
+    {
+      "name": "change-context-require-aligned",
+      "command": [
+        "python3",
+        "-B",
+        "shared/change-context/change_context.py",
+        "--require-aligned"
+      ],
+      "expected_exit": 2,
+      "exit": 2,
+      "passed": true,
+      "stderr": "",
+      "stdout_sha256": "2e8368b3d07b6be97c5cb21b3cb0f733b32a9a36b6f6e5b7f4164a686c199547",
+      "summary": {
+        "schema": "change-context-v1",
+        "status": "different_blocks",
+        "limits": "This joins report metadata; it does not replay raw RPC evidence, authenticate a provider, prove continuous state, or predict a future transaction."
+      }
+    },
+    {
+      "name": "contract-context-suite",
       "command": [
         "python3",
         "-B",
@@ -873,61 +682,56 @@
       "expected_exit": 0,
       "exit": 0,
       "passed": true,
-      "test_output": "test_changed_header_is_rejected (test_context.ContextTests.test_changed_header_is_rejected) ... ok\ntest_collectors_share_one_finalized_selection_and_hash (test_context.ContextTests.test_collectors_share_one_finalized_selection_and_hash) ... ok\ntest_conflicting_runtime_is_rejected (test_context.ContextTests.test_conflicting_runtime_is_rejected) ... ok\ntest_default_demo_never_constructs_rpc (test_context.ContextTests.test_default_demo_never_constructs_rpc) ... ok\ntest_false_and_malformed_return_are_not_success (test_context.ContextTests.test_false_and_malformed_return_are_not_success) ... ok\ntest_incomplete_custom_call_fails_before_network (test_context.ContextTests.test_incomplete_custom_call_fails_before_network) ... ok\ntest_number_and_hash_must_both_agree (test_context.ContextTests.test_number_and_hash_must_both_agree) ... ok\ntest_real_observations_are_not_same_block (test_context.ContextTests.test_real_observations_are_not_same_block) ... ok\ntest_revert_is_preserved_in_coherent_context (test_context.ContextTests.test_revert_is_preserved_in_coherent_context) ... ok\ntest_runtime_tampering_is_rejected (test_context.ContextTests.test_runtime_tampering_is_rejected) ... ok\ntest_source_mismatch_is_rejected (test_context.ContextTests.test_source_mismatch_is_rejected) ... ok\ntest_target_mismatch_is_rejected (test_context.ContextTests.test_target_mismatch_is_rejected) ... ok\ntest_transport_guard_remains_read_only (test_context.ContextTests.test_transport_guard_remains_read_only) ... ok\ntest_workspace_boundary_before_read (test_context.ContextTests.test_workspace_boundary_before_read) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.552s\n\nOK\n"
+      "stderr": "test_changed_header_is_rejected (test_context.ContextTests.test_changed_header_is_rejected) ... ok\ntest_collectors_share_one_finalized_selection_and_hash (test_context.ContextTests.test_collectors_share_one_finalized_selection_and_hash) ... ok\ntest_conflicting_runtime_is_rejected (test_context.ContextTests.test_conflicting_runtime_is_rejected) ... ok\ntest_default_demo_never_constructs_rpc (test_context.ContextTests.test_default_demo_never_constructs_rpc) ... ok\ntest_false_and_malformed_return_are_not_success (test_context.ContextTests.test_false_and_malformed_return_are_not_success) ... ok\ntest_incomplete_custom_call_fails_before_network (test_context.ContextTests.test_incomplete_custom_call_fails_before_network) ... ok\ntest_number_and_hash_must_both_agree (test_context.ContextTests.test_number_and_hash_must_both_agree) ... ok\ntest_real_observations_are_not_same_block (test_context.ContextTests.test_real_observations_are_not_same_block) ... ok\ntest_revert_is_preserved_in_coherent_context (test_context.ContextTests.test_revert_is_preserved_in_coherent_context) ... ok\ntest_runtime_tampering_is_rejected (test_context.ContextTests.test_runtime_tampering_is_rejected) ... ok\ntest_source_mismatch_is_rejected (test_context.ContextTests.test_source_mismatch_is_rejected) ... ok\ntest_target_mismatch_is_rejected (test_context.ContextTests.test_target_mismatch_is_rejected) ... ok\ntest_transport_guard_remains_read_only (test_context.ContextTests.test_transport_guard_remains_read_only) ... ok\ntest_workspace_boundary_before_read (test_context.ContextTests.test_workspace_boundary_before_read) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.149s\n\nOK\n"
     },
     {
-      "name": "shared-context-demo",
+      "name": "witness-context-suite",
       "command": [
         "python3",
         "-B",
-        "shared/contract-context/context.py",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "shared/witness-context",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "expected_exit": 0,
+      "exit": 0,
+      "passed": true,
+      "stderr": "test_assessment_does_not_mutate_evidence (test_witness_context.ContextTests.test_assessment_does_not_mutate_evidence) ... ok\ntest_call_disagreement_never_becomes_agreement (test_witness_context.ContextTests.test_call_disagreement_never_becomes_agreement) ... ok\ntest_code_block_target_and_provenance_mismatches_rejected (test_witness_context.ContextTests.test_code_block_target_and_provenance_mismatches_rejected) ... ok\ntest_code_disagreement_never_becomes_agreement (test_witness_context.ContextTests.test_code_disagreement_never_becomes_agreement) ... ok\ntest_duplicate_providers_rejected (test_witness_context.ContextTests.test_duplicate_providers_rejected) ... ok\ntest_incomplete_call_stays_inconclusive (test_witness_context.ContextTests.test_incomplete_call_stays_inconclusive) ... ok\ntest_matching_false_returns_are_only_agreement (test_witness_context.ContextTests.test_matching_false_returns_are_only_agreement) ... ok\ntest_pin_adapter_rejects_escape_and_wrong_header (test_witness_context.ContextTests.test_pin_adapter_rejects_escape_and_wrong_header) ... ok\ntest_real_context_agrees_at_exact_block (test_witness_context.ContextTests.test_real_context_agrees_at_exact_block) ... ok\ntest_tampered_runtime_rejected (test_witness_context.ContextTests.test_tampered_runtime_rejected) ... ok\ntest_workspace_escape_rejected (test_witness_context.ContextTests.test_workspace_escape_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.099s\n\nOK\n"
+    },
+    {
+      "name": "witness-context-demo",
+      "command": [
+        "python3",
+        "-B",
+        "shared/witness-context/witness_context.py",
         "demo"
       ],
-      "expected_exit": 2,
-      "exit": 2,
+      "expected_exit": 0,
+      "exit": 0,
       "passed": true,
-      "stdout": {
-        "schema": "contract-context-assessment-v1",
-        "coherent": false,
-        "status": "context_mismatch",
-        "same_target": true,
-        "same_block": false,
-        "code_block": {
-          "number": "0x18f8885",
-          "hash": "0x4d3b4ac38ef90af80a7020933c15ed6b6b7175efe4c32cd20e1ab9385552fdd4"
-        },
-        "call_block": {
-          "number": "0x18f88a5",
-          "hash": "0x644962fe0c9268aea3a3222fc32fc97a53030aab1f5298f5a570cf540bdaaeea",
-          "timestamp": "0x6ace30d7"
-        },
-        "target": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
-        "code_target": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
-        "root_code_hash": "0x24e03ed7d7d3d6dc010b9a9836e419a3eb4215383b463f4e6685b4816435f16d",
-        "candidate_effective_address": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
-        "candidate_effective_code_hash": "0x24e03ed7d7d3d6dc010b9a9836e419a3eb4215383b463f4e6685b4816435f16d",
-        "proxy_signals": [
-          "no-supported-proxy-signal"
-        ],
-        "call": {
-          "to": "0xd782bdea4ef02a0bd391eb9089470c8080f0a68e",
-          "data": "0x18160ddd",
-          "value": "0x0"
-        },
-        "execution": {
-          "status": "returned",
-          "raw": "0x0000000000000000000000000000000000000000033b2e3c9fd0803ce8000000",
-          "uint256": "1000000000000000000000000000"
+      "stderr": "",
+      "stdout_sha256": "22eb808981f31d6906ad1dc19d6022cf2cb87dab6bd1f82b8f84ddddd3301652",
+      "summary": {
+        "schema": "witness-context-assessment-v1",
+        "verdict": "agree",
+        "block": {
+          "number": "0x18f8d80",
+          "hash": "0xc562d7f60c95b618fa16f72c9031d0dd6d64962729de4a5ecb8e7835db7f678a",
+          "timestamp": "0x6ace6b57"
         },
         "limits": [
-          "Offline checks establish internal consistency, not chain authenticity.",
-          "A shared block and target link evidence; they do not certify contract safety.",
-          "Proxy slots identify candidates, not proof of actual execution routing.",
-          "No receipt, gas estimate, state diff or guarantee of future execution.",
-          "Source observations remain historical; no keys or transactions are involved."
+          "Two provider claims, not consensus proofs or proof of provider independence.",
+          "Same block and target permit reading code and call evidence together, not a safety verdict.",
+          "Proxy paths are candidates; opcode presence does not establish reachable execution.",
+          "Agree may include identical false returns or reverts; inspect execution statuses.",
+          "No gas, token movement, trace, state diff, receipt or future execution guarantee."
         ]
-      },
-      "stderr": ""
+      }
     }
   ]
 }

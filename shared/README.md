@@ -5,3 +5,5 @@
 - [Change Context](change-context/README.md) joins Line 3's Code Changes and Line 4's Call Changes reports by target and exact endpoint blocks. Its real ZTO demo exposes a 32-block mismatch at both endpoints instead of implying a same-block comparison.
 
 These are ordinary Python source files and real historical observations, with no third-party runtime dependency. Run from the workspace root with Python 3.10+ and `-B`. Originals in the line folders remain unchanged. Provenance and limits are documented beside each piece.
+
+- [Witness Context](witness-context/README.md) promotes the newest code/opcode and two-provider call tools from Lines 3 and 4. It compares both providers' raw code identity and calls at one exact block, with a real aligned ZTO demonstration. An agreement is an evidence result, never permission to transact.

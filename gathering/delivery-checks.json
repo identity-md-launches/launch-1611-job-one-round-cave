@@ -1,44 +1,39 @@
 {
-  "schema": "gathering-delivery-checks-v1",
-  "authority": "local contributor checks, not independent certification",
+  "schema": "gathering-delivery-checks-v3",
+  "authority": "Local contributor checks; not independent certification.",
   "wall": {
-    "path": "artifacts/gathering/wall.png",
-    "format": "PNG",
+    "path": "artifacts/gathering/wall-v3.png",
+    "format": "PNG RGB 8-bit",
     "width": 1254,
     "height": 1254,
-    "bit_depth": 8,
-    "color": "RGB",
-    "bytes": 2885485,
-    "sha256": "382a8e06b83402867cbc75d03e9447f542c470493cb8c5ec6a7b2ec5a25dfd39",
-    "chunk_crcs_valid": true,
-    "raster_length_valid": true
+    "sha256": "e301548767869d024d58c1fcc4ac65b60a4ab6a25bd44557dff1099aecdbf593",
+    "bytes": 3967821,
+    "chunk_crcs_and_raster_valid": true,
+    "required_png_untracked": true
   },
   "thumbnail": {
-    "path": "dist/gathering/01.jpg",
-    "format": "JPEG",
+    "path": "dist/gathering/03.jpg",
+    "format": "baseline JPEG",
     "width": 512,
     "height": 512,
-    "components": 3,
-    "bytes": 52174
+    "bytes": 52507
   },
   "visual_review": {
     "left_hand_digits": 5,
     "right_hand_digits": 5,
+    "new_hands": 0,
     "unmet_requirements_observed": [],
-    "limitation": "Generative edit: exact background pixel identity is not claimed; visual judgment is subjective."
+    "limits": "Subjective review; exact preservation is measured outside the addition rectangle."
   },
-  "records": 105,
-  "painted": 5,
-  "placeholders": 100,
-  "placeholder_jpegs": 0,
-  "gallery_articles": 105,
+  "records": 113,
+  "painted": 15,
+  "placeholders": 98,
+  "gallery_articles": 113,
   "goals": 4,
-  "existing_tracked_files_changed": false,
-  "input_artifact_hashes_unchanged": true,
-  "required_png_untracked": true,
-  "new_source_paths_within_scope": true,
-  "files_at_or_above_100000_bytes_outside_artifacts": [],
-  "offline_tests": 88,
-  "offline_commands": 15,
-  "offline_commands_expected_exits_matched": true
+  "line_sources_and_records_unchanged": true,
+  "changed_source_paths_within_scope": true,
+  "oversized_output_source_files": [],
+  "offline_tests": 235,
+  "offline_commands": 34,
+  "offline_expected_exits_matched": true
 }

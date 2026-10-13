@@ -1,5 +1,5 @@
 none
 
-All four lines work through public Ethereum reads, offline validation, and integer calculations. Line 1 already uses the real ZTO/IMD Uniswap v4 pool. Lines 2–4 use ZTO first and IMD where useful for permissions, code, and call observations. A new token or hook would add no capability needed for any goal, so Gathering 02 requests no coin and creates no `coin-order.json`.
+All four goals work through public Ethereum reads, bounded integer calculations and offline evidence checks. Line 1 uses the actual ZTO/IMD Uniswap v4 pool; Lines 2–4 use ZTO for their permission, code and call examples. ZTO and IMD already supply every token need. No goal requires a new coin or a fee-bearing hook, so Gathering 03 requests none.
 
-The work delivered this round is Python, not a reviewed Solidity contract for Sepolia. No `deploy-order.json` is warranted. No launch or deployment request, wallet, key, signature, transaction, payment, or broadcast occurred.
+No Solidity contract is presented as ready for Sepolia. There is no coin-order.json or deploy-order.json, and no launch/deployment request, wallet, key, signature, transaction, payment or broadcast.
