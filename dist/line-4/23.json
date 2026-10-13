@@ -1,0 +1,30 @@
+{
+  "name": "Two Witnesses, One Stone",
+  "image": "https://api.imd.fun/artifacts/9353c0ed6bd22f9c11c3d7a47b02fb8a78eac5c2e68896e32fdf2eb59575f5b3",
+  "attributes": [
+    {
+      "trait_type": "Cave",
+      "value": "Moss"
+    },
+    {
+      "trait_type": "Wall",
+      "value": "Line 4"
+    },
+    {
+      "trait_type": "Number",
+      "value": 23
+    },
+    {
+      "trait_type": "Left behind",
+      "value": "Call Witness"
+    },
+    {
+      "trait_type": "Meaning",
+      "value": "Pepe asks two watchers what one rehearsed call returned at the same moment."
+    },
+    {
+      "trait_type": "One thing",
+      "value": "Rehearse Ethereum contract calls before submission"
+    }
+  ]
+}
